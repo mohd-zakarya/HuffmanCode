@@ -1,9 +1,8 @@
 function huff()
 clc;
-%%fid=fopen('seq1.txt','r');
-seq='Hussain ali from Buner.';
-
- 
+fid=fopen('seq1.txt','r');
+seq=fread(fid,'*char');
+fclose(fid);
 seq=reshape(seq,1,length(seq));
 [alpha prob]=probmodel(seq);
 if ~isempty(alpha)
